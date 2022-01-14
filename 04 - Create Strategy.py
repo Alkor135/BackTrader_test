@@ -11,7 +11,7 @@ class TestStrategy(bt.Strategy):
 
     def __init__(self):
         """ Инициализация торговой системы """
-        self.date = self.datas[0].datetime
+        # self.date = self.datas[0].datetime
         self.data_open = self.datas[0].open
         self.data_high = self.datas[0].high
         self.data_low = self.datas[0].low
@@ -24,7 +24,12 @@ class TestStrategy(bt.Strategy):
         self.log(f'{self.datas[0].open[0]}')
         # self.log(f'{self.data_open}, {self.data_high}, {self.data_low}, {self.data_close}, {self.data_volume}')
         # print(self.date[0].isoformat())
-
+        print(self.datetime.date())
+        print(datetime.datetime.timetuple(self.datetime.datetime()))
+        print(datetime.datetime.timetuple(self.datetime.datetime())[0])
+        print(datetime.datetime.timetuple(self.datetime.datetime())[1])
+        print(datetime.datetime.timetuple(self.datetime.datetime())[2])
+        print(type(self.datetime.date()))
 
 
 if __name__ == '__main__':
