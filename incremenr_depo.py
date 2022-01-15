@@ -20,7 +20,7 @@ class TestStrategy(bt.Strategy):
 
     def next(self):
         """ Приход нового бара """
-        dt_1 = self.datas[-1].datetime.datetime(-1)  # Дата время предыдущего бара
+        dt_1 = self.datas[0].datetime.datetime(-1)  # Дата время предыдущего бара
         # Если месяц предыдущего бара не равен месяцу текущего бара
         if datetime.datetime.timetuple(dt_1)[1] != datetime.datetime.timetuple(self.datetime.datetime())[1]:
             self.increment_is_completed = False
